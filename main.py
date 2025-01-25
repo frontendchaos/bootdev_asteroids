@@ -35,6 +35,10 @@ def main():
         dt = t/1000.0
         for obj in updateable:
             obj.update(dt)
+        for obj in asteroids:
+            if player.check_collision(obj) == True:
+                print("Game Over!")
+                return
 
 
 if __name__ == "__main__":
